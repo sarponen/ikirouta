@@ -80,25 +80,37 @@ body {
 	font-family: 'Georgia', 'Times New Roman', serif;
 	background: linear-gradient(120deg, #23232b 0%, #18181f 100%);
 	color: #e0e0e0;
+	min-height: 100vh;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
 }
 
 #app {
-	min-height: 100dvh;
-	display: grid;
-	place-items: center;
-	padding: 2rem;
+	min-height: 100vh;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	padding: 0;
+	margin: 0;
 }
 
 .room {
-	width: min(800px, 95vw);
-	background: rgba(30, 28, 38, 0.97);
-	border: 2px solid #3a2e3a;
-	border-radius: 18px;
-	box-shadow: 0 6px 32px #000a, 0 1.5px 0 #5a4a5a inset;
-	padding: 2.5rem 2rem;
+	width: 100vw;
+	height: 100vh;
+	background: none;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	padding: 0;
+	margin: 0;
 	position: relative;
-	margin: 2rem 0;
 	overflow: hidden;
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
 }
 
 .room h1 {
@@ -130,52 +142,60 @@ body {
 .room-text {
 	flex: 1;
 	font-size: 1.08rem;
-	color: #e0e0e0;
-	line-height: 1.7;
-	text-shadow: 0 1px 2px #0006;
-}
-
-#lock-container {
-	margin: 2em 0 0 0;
-	background: rgba(40, 36, 48, 0.85);
-	border: 1.5px solid #4a3a4a;
-	border-radius: 10px;
-	padding: 1.2em 1em;
-	box-shadow: 0 2px 12px #0005;
-	max-width: 420px;
-}
-#lock-container label {
-	font-weight: bold;
-	color: #e6d6b8;
-}
-#lock-container input[type="text"] {
-	font-family: 'Fira Mono', 'Consolas', monospace;
-	letter-spacing: 0.18em;
-	font-size: 1.1em;
-	padding: 0.3em 0.7em;
-	border-radius: 6px;
-	border: 1.5px solid #5a4a5a;
-	background: #23232b;
-	color: #e0e0e0;
-	margin-left: 0.7em;
-}
-#lock-container button {
-	padding: .5rem 1.1rem;
-	border-radius: 8px;
-	border: 1.5px solid #5a4a5a;
-	background: #2a2230;
-	color: #e6d6b8;
-	font-weight: bold;
-	margin-top: 0.7em;
-	cursor: pointer;
-	box-shadow: 0 1px 4px #0004;
-	transition: background 0.2s;
-}
-#lock-container button:hover {
-	background: #3a2e3a;
-}
-#lock-message {
-	color: #e57373;
+	.room-sidebyside {
+		display: flex;
+		flex-direction: row;
+		width: 100vw;
+		height: 100vh;
+		background-size: cover;
+		background-position: left center;
+		background-repeat: no-repeat;
+		border-radius: 0;
+		overflow: hidden;
+		box-shadow: none;
+		position: relative;
+	}
+	.room-sideimg {
+		flex: 1 1 50%;
+		min-width: 0;
+		max-width: none;
+		filter: brightness(0.45) grayscale(0.15) blur(1.5px);
+		background: transparent;
+	}
+	.room-sidecontent {
+		flex: 1 1 50%;
+		background: rgba(30, 28, 38, 0.93);
+		padding: 3.5vw 3vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		z-index: 1;
+		min-width: 0;
+		height: 100vh;
+		box-sizing: border-box;
+		overflow-y: auto;
+	}
+	.room-sidecontent h1 {
+		margin-top: 0;
+	}
+	@media (max-width: 900px) {
+		.room-sidebyside {
+			flex-direction: column;
+			background-position: center top;
+			height: auto;
+			min-height: 100vh;
+		}
+		.room-sideimg {
+			min-height: 120px;
+			max-width: none;
+			height: 30vh;
+		}
+		.room-sidecontent {
+			min-width: 0;
+			padding: 1.5rem 1rem;
+			height: auto;
+		}
+	}
 	margin-top: 0.5em;
 	min-height: 1.2em;
 }
