@@ -1,0 +1,5 @@
+body { margin: 0; font-family: system-ui, -apple-system, Arial, sans-serif; }
+#app { min-height: 100dvh; display: grid; place-items: center; padding: 2rem; }
+.room { width: min(720px, 90vw); border: 1px solid #ddd; border-radius: 16px; padding: 2rem; }
+button { padding: .6rem 1rem; border-radius: 10px; border: 1px solid #bbb; cursor: pointer; }
+button + button { margin-left: .5rem; }
