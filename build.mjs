@@ -7,6 +7,22 @@ const DIST = "dist";
 
 async function main() {
   await fs.mkdir(DIST, { recursive: true });
+  // Copy images
+  const srcImgDir = join(SRC, "img");
+  const distImgDir = join(DIST, "img");
+  await fs.mkdir(distImgDir, { recursive: true });
+  try {
+    const imgFiles = await fs.readdir(srcImgDir);
+    for (const file of imgFiles) {
+      const srcPath = join(srcImgDir, file);
+      const destPath = join(distImgDir, file);
+      await fs.copyFile(srcPath, destPath);
+    }
+    console.log("Copied images → dist/img/");
+  } catch (e) {
+    if (e.code !== 'ENOENT') throw e;
+    // No images to copy
+  }
 
   const template = await fs.readFile(join(SRC, "index.template.html"), "utf8");
   const css = await fs.readFile(join(SRC, "styles.css"), "utf8");

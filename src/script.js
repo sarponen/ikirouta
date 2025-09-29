@@ -30,4 +30,29 @@
 
   const start = initialRoom();
   if (start) show(start);
+  // Numerolukko työhuoneessa
+  document.addEventListener("DOMContentLoaded", () => {
+    const lockInput = document.getElementById("code-lock");
+    const checkBtn = document.getElementById("check-code");
+    const msg = document.getElementById("lock-message");
+    const toKellari = document.getElementById("to-kellari");
+    if (lockInput && checkBtn && msg && toKellari) {
+      function checkCode() {
+        if (lockInput.value.trim().toUpperCase() === "KPM281018") {
+          msg.textContent = "Oikea koodi!";
+          msg.style.color = "green";
+          toKellari.style.display = "inline-block";
+          lockInput.disabled = true;
+          checkBtn.disabled = true;
+        } else {
+          msg.textContent = "Väärä koodi.";
+          msg.style.color = "red";
+        }
+      }
+      checkBtn.addEventListener("click", checkCode);
+      lockInput.addEventListener("keydown", e => {
+        if (e.key === "Enter") checkCode();
+      });
+    }
+  });
 })();
