@@ -1,21 +1,21 @@
 
 <section class="room" data-room="tyohuone" hidden>
-            <div class="room-sidebyside" style="background-image:url('./img/työhuone.jpg');">
-                <div class="room-sideimg"></div>
-                <div class="room-sidecontent">
-                    <h1>Työhuone</h1>
-                            <div class="room-text">
-                                <p>Astutte hämärään työhuoneeseen, joka on täynnä kirjoja, papereita ja muistilappuja. Pöydällä on pölyinen läppäri, jonka johto näyttää olevan nakerrettu poikki. Kattolamppu ei toimi, ja ainoa valo on pöytävalaisimen värjyvä hohde.</p>
-                                <p>Huomaatte työpöydässä ja kirjahyllyssä on syviä raapimajälkiä. Täällä selvästikin on ollut jokin olento, joka on purkanut turhautumistaan huonekaluihin ja virtajohtoihin. Teillä on inhottava tunne, että huoneessa ehkä lymyää jokin olento, vaikkei se ole näkösällä. Lattialla on särkynyttä lasia, kenties pudonnut juomalasi?</p>
-                                <p>Työpöydän laatikoista löytyy tutkimuspäiväkirja, suljettu kirjekuori ja sekalaisia papereita. Sivupöydällä on erivärisiä koeputkia telineessä. Työpöydän takana on suuri, epäilyttävä lipas, joka on lukittu. Lukkoon vaaditaan viisi kirjainta ja kuusi numeroa. Selvästikin Kaalepille on ollut tärkeää suojata lippaan sisältö huolella...</p>
-                            </div>
-                            <div id="lock-container">
-                                <label for="code-lock">Syötä koodi:</label>
-                                <input id="code-lock" type="text" maxlength="11" autocomplete="off" style="font-family:monospace;letter-spacing:0.2em;" />
-                                <button id="check-code">OK</button>
-                                <div id="lock-message"></div>
-                                <button id="to-kellari" data-go="kellari" style="display:none;">Avaa lipas ja mene kellariin →</button>
-                            </div>
-                </div>
+    <div class="room-overlay">
+        <img class="room-bgimg" src="./img/työhuone.jpg" alt="Työhuoneen kuva" />
+        <div class="room-overlay-content">
+            <h1>Työhuone</h1>
+            <div class="room-text">
+                <p>Astutte hämärään työhuoneeseen, joka on täynnä kirjoja, papereita ja muistilappuja. Pöydällä on pölyinen läppäri, jonka johto näyttää olevan nakerrettu poikki. Kattolamppu ei toimi, ja ainoa valo on pöytävalaisimen värjyvä hohde.</p>
+                <p>Huomaatte työpöydässä ja kirjahyllyssä on syviä raapimajälkiä. Täällä selvästikin on ollut jokin olento, joka on purkanut turhautumistaan huonekaluihin ja virtajohtoihin. Teillä on inhottava tunne, että huoneessa ehkä lymyää jokin olento, vaikkei se ole näkösällä. Lattialla on särkynyttä lasia, kenties pudonnut juomalasi?</p>
+                <p>Työpöydän laatikoista löytyy tutkimuspäiväkirja, suljettu kirjekuori ja sekalaisia papereita. Sivupöydällä on erivärisiä koeputkia telineessä. Työpöydän takana on suuri, epäilyttävä lipas, joka on lukittu. Lukkoon vaaditaan viisi kirjainta ja kuusi numeroa. Selvästikin Kaalepille on ollut tärkeää suojata lippaan sisältö huolella...</p>
             </div>
+            <div id="lock-container">
+                <label for="code-lock">Syötä koodi:</label>
+                <input id="code-lock" type="text" maxlength="11" autocomplete="off" style="font-family:monospace;letter-spacing:0.2em;" />
+                <button id="check-code">OK</button>
+                <div id="lock-message"></div>
+                <button id="to-kellari" data-go="kellari" style="display:none;">Avaa lipas ja mene kellariin →</button>
+            </div>
+        </div>
+    </div>
 </section>
